@@ -1,0 +1,15 @@
+drop table blog;
+
+CREATE TABLE USER (
+  userid   INT NOT NULL	AUTO_INCREMENT,
+  username VARCHAR(64) NOT NULL,
+  PRIMARY KEY (userid));
+
+CREATE TABLE BLOG(
+  blogid   INT NOT NULL	AUTO_INCREMENT,
+  userid   INT NOT NULL,
+  blog	   VARCHAR(100),
+  date     DateTIme,
+  PRIMARY KEY (blogid));
+
+
