@@ -5,6 +5,19 @@ CREATE TABLE USER (
   username VARCHAR(64) NOT NULL,
   PRIMARY KEY (userid));
 
+CREATE TABLE GROUPP (
+   groupid INT NOT NULL AUTO_INCREMENT,
+   groupname VARCHAR(64) NOT NULL,
+  PRIMARY KEY (groupid)
+);
+
+CREATE TABLE GROUPING(
+   usergroupid INT NOT NULL AUTO_INCREMENT,
+   userid  INT NOT NULL,
+   groupid INT NOT NULL,
+   PRIMARY KEY (usergroupid)
+);
+
 CREATE TABLE BLOG(
   blogid   INT NOT NULL	AUTO_INCREMENT,
   userid   INT NOT NULL,

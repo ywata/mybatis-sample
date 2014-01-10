@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.mybatis.example.User;
+import org.mybatis.example.Group;
  
 public class App {
 
@@ -25,15 +26,18 @@ public class App {
             System.out.println(session.selectList("User.select"));
 
             User user = new User();
-            user.setUserid(2);
-            user.setEmail("a@b");
-            user.setPassword("password");
-            user.setTel("03-1234-5678");
             user.setUsername("My name");
             session.insert("insertUser", user);
             session.commit();
 
             System.out.println(session.selectList("User.select"));
+
+            Group group = new Group();
+            group.setGroupname("group name");
+            session.insert("insertGroup", group);
+            session.commit();
+            System.out.println(session.selectList("Group.select"));
+
         } catch (Exception e) {
             e.printStackTrace();
         }finally{
